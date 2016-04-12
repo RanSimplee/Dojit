@@ -3,6 +3,7 @@
 <head>
   <title>Dojit</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'welcome', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
@@ -14,6 +15,7 @@
 			<li><%= link_to "About", welcome_about_path %></li>
 		</ul>
 	</div>
+
 
 <%= yield %>
 
