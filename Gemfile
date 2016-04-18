@@ -57,4 +57,6 @@ end
 
 gem 'devise'
 gem 'pundit'
+gem 'figaro'
+
 
