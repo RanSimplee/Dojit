@@ -63,5 +63,6 @@ gem 'pundit'
 gem 'figaro'
 #markdowns
 gem 'redcarpet'
-
+#pagination
+gem 'will_paginate', '~> 3.0.5'
 

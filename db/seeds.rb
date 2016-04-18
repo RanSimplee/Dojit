@@ -38,6 +38,15 @@ topics = Topic.all
     body:   Faker::Lorem.paragraph
   )
 end
+#post for pagination
+25.times do
+  Post.create!(
+    user:   users.sample,
+    topic:  1
+    title:  Faker::Lorem.sentence,
+    body:   Faker::Lorem.paragraph
+  )
+end
 posts = Post.all
 
 # Create Comments
