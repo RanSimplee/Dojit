@@ -55,8 +55,13 @@ group :development do
   gem 'spring'
 end
 
+#Users Authentication
 gem 'devise'
+#mails
 gem 'pundit'
+#settinf env variables on heroku
 gem 'figaro'
+#markdowns
+gem 'redcarpet'
 
 
