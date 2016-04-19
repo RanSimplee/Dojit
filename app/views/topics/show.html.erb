@@ -9,7 +9,7 @@
     <p class="lead"><%= @topic.description %></p>
     <% @posts.each do |post| %>
       <div class="media">
-        <div class="media-body">
+        <div class="media-body">           
           <h4 class="media-heading">
             <%= link_to (markdown post.title), [@topic, post] %>
           </h4>
@@ -19,6 +19,9 @@
             <%= post.user.name %><br/>
             <%= post.comments.count %> Comments
           </small>
+        </div>
+        <div class="media-right">
+          <%= image_tag(post.image.thumb.url) if post.image? %>
         </div>
       </div>
     <% end %>
