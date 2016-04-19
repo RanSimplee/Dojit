@@ -63,6 +63,10 @@ gem 'pundit'
 gem 'figaro'
 #markdowns
 gem 'redcarpet'
+#Image Uploads
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'fog'
 #pagination
 gem 'will_paginate', '~> 3.0.5'
 
