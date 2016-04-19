@@ -10,3 +10,25 @@
     <% end %>
   </div>
 </div>
+
+<div class="row">
+	<div class="col-md-8">
+		<h3>Comments:</h3>
+	</div>
+</div>
+
+<div class="row">
+  <div class="col-md-8">
+
+    	<%= render partial: 'comments/comment', collection: @comments %>
+    <%= will_paginate @comments %>
+  </div>
+</div>
+<div class="row">
+	<div class="col-md-8">
+    <% if policy(Comment.new).create? %>
+    	</br>
+    		<%= render partial: 'comments/form', locals: { topic: @topic, post: @post} %>
+    <% end %>
+  </div>
+</div>
