@@ -8,6 +8,10 @@ class User < ActiveRecord::Base
   has_many :comments, dependent: :destroy
   mount_uploader :avatar, AvatarUploader
 
+  def skip_confirmation!
+    #TODO
+  end
+
   def admin?
     role == 'admin'
   end
