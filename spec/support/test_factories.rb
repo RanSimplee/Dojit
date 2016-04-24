@@ -22,4 +22,18 @@ module TestFactories
 	  user
 	end
 
+	def comment_without_email(options={})
+		post = associated_post
+	  comment_options = {
+			body: "A Comment without an eMail",
+			post: post,
+			user: post.user
+	  }.merge(options)
+
+		@comment = Comment.new(comment_options)
+    allow(@comment).to receive(:send_favorite_emails)
+    @comment.save
+    @comment
+	end
+
 end
