@@ -13,6 +13,10 @@ class User < ActiveRecord::Base
     #TODO
   end
 
+  def voted(post)
+    votes.where(post_id: post.id).first
+  end
+
   def admin?
     role == 'admin'
   end
