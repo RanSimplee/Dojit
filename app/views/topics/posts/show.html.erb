@@ -49,9 +49,13 @@
 </div>
 <div class="row">
 	<div class="col-md-8">
-    <% if policy(Comment.new).create? %>
-    	</br>
-    		<%= render partial: 'comments/form', locals: { topic: @topic, post: @post} %>
+    <div class='js-comments'>
+      <% if policy(Comment.new).create? %>
+    </div>
+    </br>
+    <div class='new-comment'>
+  		<%= render partial: 'comments/form', locals: { topic: @topic, post: @post} %>
+    </div>
     <% end %>
   </div>
 </div>
