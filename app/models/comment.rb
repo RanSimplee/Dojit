@@ -3,7 +3,7 @@ class Comment < ActiveRecord::Base
 	belongs_to :post
  	belongs_to :user
 
-	default_scope { order('created_at DESC') }
+	default_scope { order('updated_at ASC') }
 
 	validates :body, length: { minimum: 5 }, presence: true
 	validates :post, presence: true
