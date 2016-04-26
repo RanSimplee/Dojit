@@ -3,12 +3,10 @@ class CommentsController < ApplicationController
 
   def create
     @post = Post.find(params[:post_id])
-    @comments = @post.comments
-
+    @comments = @post.comments.paginate(page: params[:page], per_page: 10)
     @comment = current_user.comments.build( comment_params )
     @comment.post = @post
     @new_comment = Comment.new
-
 
     authorize @comment
 
@@ -36,7 +34,9 @@ class CommentsController < ApplicationController
     end
 
     respond_with(@comment) do |format|
-      format.html { redirect_to [@post.topic, @post] }
+      format.html { 
+        redirect_to [@post.topic, @post]
+      }
     end
 
   end
