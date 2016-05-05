@@ -22,14 +22,19 @@
     <ul class="nav nav-tabs">
       <li class="active"><a href="#posts" data-toggle="tab">Posts</a></li>
       <li><a href="#comments" data-toggle="tab">Comments</a></li>
+      <li><a href="#suggested_posts" data-toggle="tab">Suggested Posts</a></li>
     </ul>
     <div class="tab-content">
       <div class="tab-pane active" id="posts">
         <%= render @posts %>
+        <%= will_paginate @posts %>
       </div>
       <div class="tab-pane" id="comments">
         <%= render @comments %>
         <%= will_paginate @comments %>
+      </div>
+      <div class="tab-pane" id="suggested_posts">
+        <%= render @suggested_posts %>
       </div>
     </div>
   </div>

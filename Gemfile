@@ -77,4 +77,6 @@ gem 'mini_magick'
 gem 'fog'
 #pagination
 gem 'will_paginate', '~> 3.0.5'
+#redis
+gem 'redis', '~> 3.3'
 

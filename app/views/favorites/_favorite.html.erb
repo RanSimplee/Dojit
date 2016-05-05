@@ -1,11 +1,11 @@
 <% if policy(Favorite.new).create? %>
   <div class="favorite">
-    <% if favorite = current_user.favorited(post) %>
-      <%= link_to [post, favorite], class: 'btn btn-danger', method: :delete do %>
+    <% if current_user.is_favorited(post) %>
+      <%= link_to post_favorite_path(post, current_user), class: 'btn btn-danger', method: :delete do %>
         <i class="glyphicon glyphicon-star-empty"> </i>&nbsp; Unfavorite
       <% end %>
     <% else %>
-      <%= link_to [post, Favorite.new], class: 'btn btn-primary', method: :post do %>
+      <%= link_to post_favorites_path(post), class: 'btn btn-primary', method: :post do %>
         <i class="glyphicon glyphicon-star"> </i>&nbsp; Favorite
       <% end %>
     <% end %>
